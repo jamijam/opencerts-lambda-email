@@ -96,7 +96,7 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@govtechsg/open-attestation@^1.1.21":
+"@govtechsg/open-attestation@^1.1.22":
   version "1.1.22"
   resolved "https://registry.yarnpkg.com/@govtechsg/open-attestation/-/open-attestation-1.1.22.tgz#e59c2ca67a4a595de1d625707ed66dd3152220c6"
   dependencies:
@@ -108,11 +108,11 @@
     validator "^10.5.0"
     verbal-expressions "^0.3.0"
 
-"@govtechsg/open-certificate@^1.1.32":
-  version "1.1.32"
-  resolved "https://registry.yarnpkg.com/@govtechsg/open-certificate/-/open-certificate-1.1.32.tgz#342a79f8e7e586acee84b2e41a1970fcf30a72c3"
+"@govtechsg/open-certificate@^1.1.33":
+  version "1.1.33"
+  resolved "https://registry.yarnpkg.com/@govtechsg/open-certificate/-/open-certificate-1.1.33.tgz#a67847b58c1d8438a4b59f9029c4819b64cf4fa7"
   dependencies:
-    "@govtechsg/open-attestation" "^1.1.21"
+    "@govtechsg/open-attestation" "^1.1.22"
     flat "^4.1.0"
     lodash "^4.17.10"
 

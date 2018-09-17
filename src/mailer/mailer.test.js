@@ -51,9 +51,9 @@ describe("mailer", () => {
     const rawEmailUrl = `${previewUrl}/message.eml`;
     const valid = await validateRawEmail({
       url: rawEmailUrl,
-      html: "You got a file from Mr Blockchain",
-      text: "You got a file from Mr Blockchain",
-      subject: "OpenCerts from Mr Blockchain",
+      html: "You got a file from John Snow",
+      text: "You got a file from John Snow",
+      subject: "OpenCerts from John Snow",
       to: account.user
     });
     expect(valid).to.be.true;
