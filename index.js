@@ -1,4 +1,5 @@
 require("dotenv").config();
+const cors = require("cors");
 const serverless = require("serverless-http");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -8,6 +9,7 @@ const certificateMailer = require("./src/mailer/mailerWithSESTransporter");
 const captchaValidator = recaptcha(process.env.RECAPTCHA_SECRET);
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 
 app.post("/", async (req, res) => {
