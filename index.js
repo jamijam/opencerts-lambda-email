@@ -2,24 +2,30 @@ require("dotenv").config();
 const serverless = require("serverless-http");
 const express = require("express");
 const bodyParser = require("body-parser");
+const recaptcha = require("./src/recaptcha");
 const certificateMailer = require("./src/mailer/mailerWithSESTransporter");
 
+const captchaValidator = recaptcha(process.env.RECAPTCHA_SECRET);
 const app = express();
 
 app.use(bodyParser.json());
 
 app.post("/", async (req, res) => {
   try {
-    const { to, data } = req.body;
+    const { to, data, captcha } = req.body;
+
+    // Validate captcha
+    const valid = await captchaValidator(captcha);
+    if (!valid) throw new Error("Invalid captcha");
+
+    // Send certificate out
     const certificate = JSON.parse(data);
-
-    console.log(JSON.stringify(certificate, null, 2));
-    console.log(to);
-
     await certificateMailer({ to, certificate });
+
     res.send("OK");
   } catch (e) {
-    res.status(500).send({ error: 'Request failed' })
+    console.log(e);
+    res.status(500).send({ error: "Request failed" });
   }
 });
 
