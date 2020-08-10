@@ -13,7 +13,7 @@
   "author": "Raymond Yeh <yehjxraymond@gmail.com> (http://geek.sg)",
   "license": "ISC",
   "dependencies": {
-    "@govtechsg/open-certificate": "^1.1.33",
+    "@govtechsg/open-certificate": "^1.1.39",
     "aws-sdk": "^2.314.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
